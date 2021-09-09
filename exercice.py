@@ -2,34 +2,36 @@
 # -*- coding: utf-8 -*-
 
 
-import math
+import math as m
 
 def square_root(a: float) -> float:
-    return 0.0
+    return a**0.5
 
 
 def square(a: float) -> float:
-    return 0.0
+    return a**2
 
 
 def average(a: float, b: float, c: float) -> float:
-    return 0.0
+    return (a+b+c)/3
 
 
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    return m.radians(angle_degs+angle_mins/60+angle_secs/3600)
 
 
 def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+    degs= m.degrees(angle_rads)
+    min_=60*(degs-int(degs))
+    return int(degs), int(min_), int((min_-int(min_))*3600)
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
+    return round((temperature-32 ) * 5/9,2)
 
 
 def to_farenheit(temperature: float) -> float:
-    return 0.0
+    return round(temperature *9/5 +32,2)
 
 
 def main() -> None:
@@ -50,3 +52,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+print(2)
